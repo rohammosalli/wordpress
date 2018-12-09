@@ -16,4 +16,14 @@ $ docker tag wordpress/rohammosalli  registry-host:5000/blog/blog
 $ docker push registry-host:5000/blog/blog
 ```
 
-the you can use the image in your Openshift Cluster or Kubernetes cluster ;)
+### How to use 
+The following environment variables are also honored for configuring your WordPress instance on your cluster:
+
+-e WORDPRESS_DB_HOST=... (defaults to the IP and port of the linked mysql container)
+-e WORDPRESS_DB_USER=... (defaults to "root")
+-e WORDPRESS_DB_PASSWORD=... (defaults to the value of the MYSQL_ROOT_PASSWORD environment variable from the linked mysql container)
+-e WORDPRESS_DB_NAME=... (defaults to "wordpress")
+
+
+
+then you can use the image in your Openshift Cluster or Kubernetes cluster ;)
